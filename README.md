@@ -114,5 +114,5 @@ This project is licensed under the [MIT License](LICENSE). You are free to use, 
 
 ## Acknowledgements
 
-This project was inspired by [Data with Baraa's](https://www.youtube.com/@DataWithBaraa) tutorial on [SQL Data Warehouse from Scratch] (https://www.youtube.com/watch?v=9GVqKuTVANE).
+This project was inspired by [Data with Baraa's](https://www.youtube.com/@DataWithBaraa) tutorial on [SQL Data Warehouse from Scratch](https://www.youtube.com/watch?v=9GVqKuTVANE).
 
