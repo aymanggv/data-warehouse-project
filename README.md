@@ -107,3 +107,12 @@ data-warehouse-project/
 ## 🛡️ License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
+
+
+---
+
+
+## Acknowledgements
+
+This project was inspired by [Data with Baraa]'s tutorial on [SQL Data Warehouse from Scratch | Full Hands-On Data Engineering Project].
+
