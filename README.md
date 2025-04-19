@@ -43,7 +43,7 @@ Everything is for Free!
 - **[Git Repository](https://github.com/):** A GitHub account and repository to manage, version, and collaborate on the code efficiently.
 - **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
 - **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
-- **[Notion Project Management Steps](https://www.notion.so/Data-Warehouse-Project-1d576057db5f80b4b845c2f7d66ba5b3?pvs=4):** Access to All Project Phases and Tasks.
+- **[Notion Project Management Steps](https://www.notion.so/Data-Warehouse-Project-1d576057db5f80b4b845c2f7d66ba5b3?pvs=4):** Access to all of the phases of this project and its tasks.
 
 ---
 
