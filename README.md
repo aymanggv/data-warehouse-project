@@ -84,6 +84,8 @@ data-warehouse-project/
 │   ├── advanced_data_analysis/         # SQL script for advanced data analysis
 │
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+│   ├── source_crm/                     # CSV files for CRM data
+│   ├── source_erp/                     # CSV files for ERP data
 │
 ├── docs/                               # Project documentation and architecture details
 │   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
