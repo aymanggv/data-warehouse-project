@@ -79,6 +79,10 @@ These insights empower stakeholders with key business metrics, enabling strategi
 ```
 data-warehouse-project/
 │
+│data_analysis/
+│   ├── exploratory_data_analysis/      # SQL script for exploratory data analysis
+│   ├── advanced_data_analysis/         # SQL script for advanced data analysis
+│
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
 ├── docs/                               # Project documentation and architecture details
