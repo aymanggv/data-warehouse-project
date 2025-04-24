@@ -81,6 +81,7 @@ data-warehouse-project/
 │data_analysis/
 │   ├── exploratory_data_analysis/      # SQL script for exploratory data analysis
 │   ├── advanced_data_analysis/         # SQL script for advanced data analysis
+│   ├── reports/                        # SQL script for customer report and product report
 │
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │   ├── source_crm/                     # CSV files for CRM data
