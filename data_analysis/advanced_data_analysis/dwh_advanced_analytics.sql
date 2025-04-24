@@ -141,3 +141,56 @@ SUM(total_sales) over () as overall_sales,
 concat(round((cast (total_sales as float) * 100.0 / sum(total_sales) over ()), 2), '%') AS percent_of_total
 from cte
 order by total_sales desc
+
+
+
+-- Segment products into cost ranges and count how many segments fall into each categtory
+with cte as
+(SELECT
+product_key,
+product_name,
+ cost,
+CASE WHEN cost < 100 THEN 'Below 100'
+     WHEN cost BETWEEN 100 AND 500 THEN '100-500'
+     WHEN cost BETWEEN 500 AND 1000 THEN ' 500-1000'
+      ELSE 'Above 1000'
+ END cost_range
+ FROM gold.dim_products
+ )
+SELECT
+cost_range,
+COUNT (product_key) AS total_products
+FROM cte
+GROUP BY cost_range
+ORDER BY total_products DESC
+
+
+
+-- Group customers into three segments based on their spending behavior:
+-- VIP: at least 12 months of history and spending more than €5,000.
+-- Regular: at least 12 months of history but spending €5,000 or less.
+-- New: lifespan less than 12 months.
+-- And find the total number of customers by each group.
+
+with cte as (
+SELECT
+c.customer_key,
+sum(f.sales_amount) as total_spending,
+MIN(order_date) as first_order_date,
+MAX(order_date) as last_order_date,
+DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) as lifespan, 
+case when sum(f.sales_amount) > 5000 and DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) >= 12 then 'VIP'
+	 when sum(f.sales_amount) < 5000 and DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) >= 12 then 'Regular'
+	 when DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) <= 12 then 'New'
+	 else 'N/A'
+end as customer_segment
+FROM gold.facts_table f
+left join gold.dim_customers c
+on f.customer_key = c.customer_key
+group by c.customer_key
+)
+select
+customer_segment,
+count(*) as total_customers
+from cte
+group by customer_segment
